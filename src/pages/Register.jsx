@@ -1,0 +1,203 @@
+import { Field, Formik } from "formik";
+import * as Yup from "yup";
+import { useDropzone } from "react-dropzone";
+import { useNavigate } from "react-router-dom";
+
+const Register = () => {
+  const navigate = useNavigate();
+  const handleClick = () => {
+    navigate("/");
+  };
+
+  return (
+    <div className=" bg-gray-100 min-h-screen">
+      <div className="  text-4xl border-solid border bg-white rounded-b-3xl h-20   w-full justify-center flex items-end pb-2    text-gray-600 border-gray-400 font-serif font-extrabold ">
+        FabinaHut
+      </div>
+      <div>
+        <Formik
+          initialValues={{
+            firstName: "",
+            lastName: "",
+            location: "",
+            occupation: "",
+            email: "",
+            password: "",
+            picture: "",
+          }}
+          onSubmit={async (values) => {
+            const formData = new FormData();
+            for (let value in values) {
+              formData.append(value, values[value]);
+            }
+            formData.append("picturePath", values.picture.name);
+
+            const savedUserResponse = await fetch(
+              "http://localhost:3001/auth/register",
+              {
+                method: "POST",
+                body: formData,
+              }
+            );
+            const savedUser = await savedUserResponse.json();
+            // if (savedUser) {
+            //   navigate("/");
+            // }
+          }}
+          validationSchema={Yup.object().shape({
+            firstName: Yup.string().required("Reguired"),
+            lastName: Yup.string().required("Required"),
+            location: Yup.string().required("Required"),
+            occupation: Yup.string().required("Required"),
+            email: Yup.string().email().required("Required"),
+            password: Yup.string()
+              .min(6, "min 6 characters required")
+              .required("Required!"),
+            picture: Yup.string().required(),
+          })}
+        >
+          {({
+            values,
+            errors,
+            touched,
+            handleChange,
+            handleBlur,
+            handleSubmit,
+            isSubmitting,
+            setFieldValue,
+
+            /* and other goodies */
+          }) => (
+            <form onSubmit={handleSubmit}>
+              <div className="  flex flex-col  p-4 mt-24 mx-4  border-solid border pb-16  bg-white   ">
+                <input
+                  placeholder="First Name"
+                  type="firstName"
+                  name="firstName"
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  value={values.firstName}
+                  className=" w-full border-gray-300 border-solid p-4    border"
+                />
+                {errors.firstName && touched.firstName && (
+                  <div className=" text-red-700 ">{errors.firstName}</div>
+                )}
+                <input
+                  placeholder="Last Name"
+                  type="lastName"
+                  name="lastName"
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  value={values.lastName}
+                  className=" w-full border-gray-300 border-solid p-4 mt-4   border"
+                />
+                {errors.lastName && touched.lastName && (
+                  <div className=" text-red-700 ">{errors.lastName}</div>
+                )}
+                <input
+                  placeholder="Location"
+                  type="location"
+                  name="location"
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  value={values.location}
+                  className=" w-full border-gray-300 border-solid p-4  mt-4  border"
+                />
+                {errors.location && touched.location && (
+                  <div className=" text-red-700 ">{errors.location}</div>
+                )}
+                <input
+                  placeholder="Occupation"
+                  type="occupation"
+                  name="occupation"
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  value={values.occupation}
+                  className=" w-full border-gray-300 border-solid p-4 mt-4   border"
+                />
+                {errors.occupation && touched.occupation && (
+                  <div className=" text-red-700 ">{errors.occupation}</div>
+                )}
+
+                <div className=" w-full border-gray-200  border p-4 py-8 mt-4  text-gray-400  ">
+                  <div className=" w-full border-gray-600 p-4 border border-dashed  ">
+                    <UploadComponent
+                      values={values}
+                      setFieldValue={setFieldValue}
+                    />
+                  </div>
+                </div>
+
+                <input
+                  placeholder="Enter your Email"
+                  type="email"
+                  name="email"
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  value={values.email}
+                  className=" w-full border-gray-300 border-solid p-4  mt-4  border"
+                />
+                {errors.email && touched.email && (
+                  <div className=" text-red-700 ">{errors.email}</div>
+                )}
+                <input
+                  placeholder="Password"
+                  type="password"
+                  name="password"
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  value={values.password}
+                  className=" w-full border-gray-300 border-solid p-4  border  mt-4"
+                />
+                {errors.password && touched.password && (
+                  <div className=" text-red-700 ">{errors.password}</div>
+                )}
+                <button
+                  className="  bg-gray-600 mb-2 rounded-md h-16   text-white font-semibold text-xl mt-8"
+                  type="submit"
+                  disabled={isSubmitting}
+                >
+                  Submit
+                </button>
+                <span
+                  onClick={handleClick}
+                  className=" text-gray-400 underline"
+                >
+                  Already have an account&#63; Login here
+                </span>
+              </div>
+            </form>
+          )}
+        </Formik>
+      </div>
+    </div>
+  );
+};
+
+const UploadComponent = (props) => {
+  const { setFieldValue, values } = props;
+  const { getRootProps, getInputProps } = useDropzone({
+    accept: {
+      "image/*": [".jpeg", ".jpg", ".png"],
+    },
+    onDrop: (acceptedFiles) => {
+      setFieldValue("picture", acceptedFiles[0]);
+    },
+  });
+
+  return (
+    <div>
+      {}
+      <div {...getRootProps({ className: "dropzone" })}>
+        <input {...getInputProps()} />
+        {!values.picture ? (
+          <p>Add Picture Here</p>
+        ) : (
+          <div>{values.picture.name}</div>
+        )}
+      </div>
+    </div>
+  );
+};
+
+export default Register;

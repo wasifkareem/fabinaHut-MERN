@@ -40,9 +40,7 @@ const Register = () => {
               }
             );
             const savedUser = await savedUserResponse.json();
-            // if (savedUser) {
-            //   navigate("/");
-            // }
+            console.log(savedUser.firstName);
           }}
           validationSchema={Yup.object().shape({
             firstName: Yup.string().required("Reguired"),

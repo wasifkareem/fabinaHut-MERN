@@ -1,9 +1,12 @@
 import { Field, Formik } from "formik";
 import * as Yup from "yup";
 import { useNavigate } from "react-router-dom";
+import { loginSuccess } from "../redux/userRedux";
+import { useDispatch } from "react-redux";
 
 const Login = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const handleClick = () => {
     navigate("/register");
@@ -26,10 +29,9 @@ const Login = () => {
                 body: JSON.stringify(values),
               }
             );
-            const loggedinUser = loginUserResponse.json();
-            if (loggedinUser) {
-              navigate("/homepage");
-            }
+
+            const loggedinUser = await loginUserResponse.json();
+            dispatch(loginSuccess(loggedinUser));
           }}
           validationSchema={Yup.object().shape({
             email: Yup.string().email().required("Required"),

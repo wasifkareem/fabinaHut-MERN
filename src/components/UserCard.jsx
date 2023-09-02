@@ -26,16 +26,15 @@ const UserCard = () => {
 
   return (
     <div>
-      <div className="  pb-6 rounded-xl bg-white mt-10 mx-6 border flex flex-col  ">
+      <div className="  pb-6  rounded-md bg-white mt-10 mx-6 border flex flex-col  ">
         <section className="flex items-center">
-          <div className="border rounded-full w-16 h-16 flex  mt-8 mb-4 ml-6 overflow-hidden">
-            {
-              <img
-                src={`http://localhost:3001/assets/${picturePath}`}
-                alt="dp"
-              />
-            }
-          </div>
+          {
+            <img
+              className="border object-cover object-center rounded-full w-16 h-16 flex  mt-8 mb-4 ml-6"
+              src={`http://localhost:3001/assets/${picturePath}`}
+              alt="dp"
+            />
+          }
           <div className=" mx-4 mt-2">
             <h1 className=" text-xl font-semibold  ">
               {firstName} {lastName}

@@ -26,6 +26,7 @@ const Register = () => {
             picture: "",
           }}
           onSubmit={async (values) => {
+            console.log(typeof values);
             const formData = new FormData();
             for (let value in values) {
               formData.append(value, values[value]);
@@ -40,7 +41,6 @@ const Register = () => {
               }
             );
             const savedUser = await savedUserResponse.json();
-            console.log(savedUser.firstName);
           }}
           validationSchema={Yup.object().shape({
             firstName: Yup.string().required("Reguired"),
@@ -118,7 +118,7 @@ const Register = () => {
                 )}
 
                 <div className=" w-full border-gray-200  border p-4 py-8 mt-4  text-gray-400  ">
-                  <div className=" w-full border-gray-600 p-4 border border-dashed  ">
+                  <div className=" w-full border-gray-600  focus:outline-none p-4 border border-dashed  ">
                     <UploadComponent
                       values={values}
                       setFieldValue={setFieldValue}

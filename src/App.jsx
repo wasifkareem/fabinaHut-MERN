@@ -6,6 +6,7 @@ import { useSelector } from "react-redux";
 
 function App() {
   const user = Boolean(useSelector((state) => state.user.currentUser));
+
   return (
     <BrowserRouter>
       <Routes>

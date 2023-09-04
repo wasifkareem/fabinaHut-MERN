@@ -10,7 +10,7 @@ const Register = () => {
   };
 
   return (
-    <div className=" bg-gray-100 min-h-screen">
+    <div className=" bg-gray-700 min-h-screen">
       <div className="  text-4xl border-solid border bg-white rounded-b-3xl h-20   w-full justify-center flex items-end pb-2    text-gray-600 border-gray-400 font-serif font-extrabold ">
         FabinaHut
       </div>
@@ -26,7 +26,6 @@ const Register = () => {
             picture: "",
           }}
           onSubmit={async (values) => {
-            console.log(typeof values);
             const formData = new FormData();
             for (let value in values) {
               formData.append(value, values[value]);
@@ -41,9 +40,12 @@ const Register = () => {
               }
             );
             const savedUser = await savedUserResponse.json();
+            if (savedUser._id) {
+              navigate("/");
+            }
           }}
           validationSchema={Yup.object().shape({
-            firstName: Yup.string().required("Reguired"),
+            firstName: Yup.string().required("Required"),
             lastName: Yup.string().required("Required"),
             location: Yup.string().required("Required"),
             occupation: Yup.string().required("Required"),
@@ -67,7 +69,7 @@ const Register = () => {
             /* and other goodies */
           }) => (
             <form onSubmit={handleSubmit}>
-              <div className="  flex flex-col  p-4 mt-24 mx-4  border-solid border pb-16  bg-white   ">
+              <div className="  flex flex-col  p-4 mt-24 mx-4  border-solid border pb-16 sm:pb-20  bg-white  sm:w-[550px] sm:ml-[770px] rounded-lg sm:p-7 ">
                 <input
                   placeholder="First Name"
                   type="firstName"
@@ -75,7 +77,7 @@ const Register = () => {
                   onChange={handleChange}
                   onBlur={handleBlur}
                   value={values.firstName}
-                  className=" w-full border-gray-300 border-solid p-4    border"
+                  className=" w-full  sm:text-2xl focus:outline-none  border-gray-300 border-solid p-4   capitalize  border"
                 />
                 {errors.firstName && touched.firstName && (
                   <div className=" text-red-700 ">{errors.firstName}</div>
@@ -87,7 +89,7 @@ const Register = () => {
                   onChange={handleChange}
                   onBlur={handleBlur}
                   value={values.lastName}
-                  className=" w-full border-gray-300 border-solid p-4 mt-4   border"
+                  className=" w-full border-gray-300 border-solid p-4 mt-4  capitalize focus:outline-none  sm:text-2xl  border"
                 />
                 {errors.lastName && touched.lastName && (
                   <div className=" text-red-700 ">{errors.lastName}</div>
@@ -99,7 +101,7 @@ const Register = () => {
                   onChange={handleChange}
                   onBlur={handleBlur}
                   value={values.location}
-                  className=" w-full border-gray-300 border-solid p-4  mt-4  border"
+                  className=" w-full sm:text-2xl focus:outline-none  border-gray-300 border-solid p-4  mt-4  border"
                 />
                 {errors.location && touched.location && (
                   <div className=" text-red-700 ">{errors.location}</div>
@@ -111,14 +113,14 @@ const Register = () => {
                   onChange={handleChange}
                   onBlur={handleBlur}
                   value={values.occupation}
-                  className=" w-full border-gray-300 border-solid p-4 mt-4   border"
+                  className=" w-full sm:text-2xl focus:outline-none  border-gray-300 border-solid p-4 mt-4   border"
                 />
                 {errors.occupation && touched.occupation && (
                   <div className=" text-red-700 ">{errors.occupation}</div>
                 )}
 
                 <div className=" w-full border-gray-200  border p-4 py-8 mt-4  text-gray-400  ">
-                  <div className=" w-full border-gray-600  focus:outline-none p-4 border border-dashed  ">
+                  <div className=" w-full border-gray-600  sm:text-2xl  cursor-pointer focus:outline-none p-4 border border-dashed  ">
                     <UploadComponent
                       values={values}
                       setFieldValue={setFieldValue}
@@ -133,7 +135,7 @@ const Register = () => {
                   onChange={handleChange}
                   onBlur={handleBlur}
                   value={values.email}
-                  className=" w-full border-gray-300 border-solid p-4  mt-4  border"
+                  className=" w-full sm:text-2xl focus:outline-none   border-gray-300 border-solid p-4  mt-4  border"
                 />
                 {errors.email && touched.email && (
                   <div className=" text-red-700 ">{errors.email}</div>
@@ -145,13 +147,13 @@ const Register = () => {
                   onChange={handleChange}
                   onBlur={handleBlur}
                   value={values.password}
-                  className=" w-full border-gray-300 border-solid p-4  border  mt-4"
+                  className=" w-full sm:text-2xl focus:outline-none  border-gray-300 border-solid p-4  border  mt-4"
                 />
                 {errors.password && touched.password && (
                   <div className=" text-red-700 ">{errors.password}</div>
                 )}
                 <button
-                  className="  bg-gray-600 mb-2 rounded-md h-16   text-white font-semibold text-xl mt-8"
+                  className="  bg-gray-600 mb-2 rounded-md h-16  focus:outline-none  text-white font-semibold text-xl mt-8"
                   type="submit"
                   disabled={isSubmitting}
                 >
@@ -159,7 +161,7 @@ const Register = () => {
                 </button>
                 <span
                   onClick={handleClick}
-                  className=" text-gray-400 underline"
+                  className=" text-gray-400 underline sm:text-2xl cursor-pointer "
                 >
                   Already have an account&#63; Login here
                 </span>

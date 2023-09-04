@@ -26,7 +26,7 @@ const UserCard = () => {
 
   return (
     <div>
-      <div className="  pb-6  rounded-md bg-white mt-10 mx-6 border flex flex-col  ">
+      <div className="  pb-6  sm:text-xl rounded-md bg-white mt-10 mx-6 border flex flex-col  ">
         <section className="flex items-center">
           {
             <img
@@ -36,12 +36,12 @@ const UserCard = () => {
             />
           }
           <div className=" mx-4 mt-2">
-            <h1 className=" text-xl font-semibold  ">
+            <h1 className=" font-sans text-xl sm:text-3xl font-semibold ">
               {firstName} {lastName}
             </h1>
             <p className=" text-gray-400">43 friends</p>
           </div>
-          <RiUserSettingsLine className=" ml-8 text-xl" />
+          <RiUserSettingsLine className=" ml-8 text-xl sm:text-4xl sm:ml-64" />
         </section>
         <hr className="  w-5/6 flex ml-7  bg-gray-400 " />
 
@@ -58,11 +58,11 @@ const UserCard = () => {
         </section>
         <hr className="  w-5/6 flex ml-7  bg-gray-400 " />
         <section>
-          <div className="flex flex-row justify-between   my-4 mx-8 text-sm">
+          <div className="flex flex-row justify-between  sm:text-xl  my-4 mx-8 text-sm">
             <p className=" text-gray-400">Who viewed your profile</p>
             <p className=" font-bold text-gray-800">12351</p>
           </div>
-          <div className="flex flex-row justify-between   my-4 mx-8 text-sm">
+          <div className=" sm:text-xl flex flex-row justify-between   my-4 mx-8 text-sm">
             <p className=" text-gray-400">Impressions of your post</p>
             <p className=" font-bold text-gray-800">55555</p>
           </div>

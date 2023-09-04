@@ -34,12 +34,12 @@ const PostCard = ({ item }) => {
   };
 
   return (
-    <div className="  pb-6 px-5  rounded-md bg-white mt-10 mx-6 border flex flex-col  ">
+    <div className="  pb-6 px-5  rounded-md bg-white mt-10 mx-6 border flex flex-col   ">
       <section className="flex items-center pt-7 mb-3">
         <div>
           {
             <img
-              className="border rounded-full  h-16 w-16 object-cover"
+              className="border rounded-full  h-16 w-16 object-cover "
               src={`http://localhost:3001/assets/${item.userPicturePath}`}
               alt="dp"
             />
@@ -57,9 +57,14 @@ const PostCard = ({ item }) => {
           </div>
         </div>
       </section>
-      <p className=" text-sm  font-sans text-gray-500">{item.description}</p>
+      <p
+        className=" text-sm sm:text-xl sm:font-semibold
+        font-sans text-gray-600 mt-2"
+      >
+        {item.description}
+      </p>
       <img
-        className=" rounded-lg mt-2"
+        className=" rounded-lg mt-2 sm:max-h-[90vh] sm:object-cover"
         src={`http://localhost:3001/assets/${item.picturePath}`}
         alt=""
       />

@@ -29,7 +29,7 @@ const Navbar = () => {
           </select>
           <img
             className=" h-10 w-10 sm:h-14  sm:w-14 sm:ml-[1px] rounded border-4 object-cover sm:border-[5px] border-gray-700"
-            src={`http://localhost:3001/assets/${pic}`}
+            src={`https://fabinahut-backend-wasifkareem.vercel.app/assets/${pic}`}
             alt=""
           />
         </div>

@@ -19,7 +19,7 @@ const PostCard = ({ item }) => {
 
     axios
       .patch(
-        `http://localhost:3001/posts/${item._id}/like`,
+        `https://fabinahut-backend-wasifkareem.vercel.app/posts/${item._id}/like`,
         JSON.stringify({ postData }),
         {
           headers,
@@ -40,7 +40,7 @@ const PostCard = ({ item }) => {
           {
             <img
               className="border rounded-full  h-16 w-16 object-cover "
-              src={`http://localhost:3001/assets/${item.userPicturePath}`}
+              src={`https://fabinahut-backend-wasifkareem.vercel.app/assets/${item.userPicturePath}`}
               alt="dp"
             />
           }
@@ -65,7 +65,7 @@ const PostCard = ({ item }) => {
       </p>
       <img
         className=" rounded-lg mt-2 sm:max-h-[90vh] sm:object-cover"
-        src={`http://localhost:3001/assets/${item.picturePath}`}
+        src={`https://fabinahut-backend-wasifkareem.vercel.app/assets/${item.picturePath}`}
         alt=""
       />
       <section className=" flex  text-gray-600 justify-between text-2xl mx-2 mt-4 ">

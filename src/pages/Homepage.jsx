@@ -42,7 +42,7 @@ const Homepage = () => {
     formData.append("picture", fieldValue);
 
     axios
-      .post(" http://localhost:3001/posts", formData)
+      .post("https://fabinahut-backend-wasifkareem.vercel.app/posts", formData)
       .then((response) => {
         setRefresh(response.data);
         setFieldValue(null);
@@ -80,7 +80,7 @@ const Homepage = () => {
             <div className="flex items-center">
               <img
                 className="border object-cover object-center rounded-full w-16 h-16 flex  mt-8 mb-4 ml-6 sm:w-24 sm:h-24 sm:"
-                src={`http://localhost:3001/assets/${picturePath}`}
+                src={`https://fabinahut-backend-wasifkareem.vercel.app/assets/${picturePath}`}
                 alt=" DP"
               />
               <input

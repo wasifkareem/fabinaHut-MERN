@@ -7,7 +7,9 @@ const Posts = (refresh) => {
   useEffect(() => {
     const getdata = async () => {
       try {
-        const res = await axios.get("http://localhost:3001/posts");
+        const res = await axios.get(
+          "https://fabinahut-backend-wasifkareem.vercel.app/posts"
+        );
         const postInfo = res.data;
         setFeedPosts(postInfo);
       } catch (err) {

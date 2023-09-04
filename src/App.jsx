@@ -5,7 +5,7 @@ import Homepage from "./pages/Homepage";
 import { useSelector } from "react-redux";
 
 function App() {
-  const user = Boolean(useSelector((state) => state.user.currentUser.token));
+  const user = Boolean(useSelector((state) => state.user.currentUser));
 
   return (
     <BrowserRouter>

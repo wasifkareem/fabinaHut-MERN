@@ -19,10 +19,11 @@ const Navbar = () => {
         <div className="  text-xl  h-14   w-full  items-center flex pl-6 pb-1  text-gray-600 border-gray-400 font-serif font-extrabold ">
           FabinaHut
           <select
+            value="username"
             onChange={handleChange}
             className="  rounded  text-sm sm:text-xl font-sans font-medium ml-24 sm:ml-5 sm:h-10 h-10 p-1 bg-gray-700 text-white"
           >
-            <option selected disabled>
+            <option value="username" disabled>
               {username}
             </option>
             <option value="logout">logout</option>

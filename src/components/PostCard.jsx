@@ -58,7 +58,7 @@ const PostCard = ({ item }) => {
         </div>
       </section>
       <p
-        className=" text-sm sm:text-base sm:mb-0  sm:mt-6
+        className=" first-letter:uppercase text-sm sm:text-base sm:mb-0  sm:mt-6
         font-sans text-gray-600 mt-2"
       >
         {item.description}

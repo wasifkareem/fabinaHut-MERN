@@ -3,8 +3,25 @@ import * as Yup from "yup";
 import { useNavigate } from "react-router-dom";
 import { loginSuccess } from "../redux/userRedux";
 import { useDispatch } from "react-redux";
+import { useEffect } from "react";
+import axios from "axios";
 
 const Login = () => {
+  useEffect(() => {
+    const getdata = async () => {
+      try {
+        const res = await axios.get(
+          "https://fabinahut-server.onrender.com/posts"
+        );
+        const postInfo = res.data;
+        setFeedPosts(postInfo);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    getdata();
+  });
+
   const navigate = useNavigate();
   const dispatch = useDispatch();
 

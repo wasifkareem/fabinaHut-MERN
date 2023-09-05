@@ -31,7 +31,7 @@ const UserCard = () => {
           {
             <img
               className="border object-cover object-center rounded-full w-14 h-14 flex  mt-8 mb-4 sm:mb-2  sm:mt-4 ml-6"
-              src={`https://fabinahut-backend-wasifkareem.vercel.app/assets/${picturePath}`}
+              src={`https://fabinahut-server.onrender.com/assets/${picturePath}`}
               alt="dp"
             />
           }

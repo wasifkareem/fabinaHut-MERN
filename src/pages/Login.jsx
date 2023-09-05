@@ -21,7 +21,7 @@ const Login = () => {
           initialValues={{ email: "", password: "" }}
           onSubmit={async (values) => {
             const loginUserResponse = await fetch(
-              "https://fabinahut-backend-wasifkareem.vercel.app/auth/login",
+              "https://fabinahut-server.onrender.com/auth/login",
               {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },

@@ -33,7 +33,7 @@ const Register = () => {
             formData.append("picturePath", values.picture.name);
 
             const savedUserResponse = await fetch(
-              "https://fabinahut-backend-wasifkareem.vercel.app/auth/register",
+              "https://fabinahut-server.onrender.com/auth/register",
               {
                 method: "POST",
                 body: formData,

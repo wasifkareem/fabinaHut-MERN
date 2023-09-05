@@ -8,7 +8,7 @@ const Posts = (refresh) => {
     const getdata = async () => {
       try {
         const res = await axios.get(
-          "https://fabinahut-backend-wasifkareem.vercel.app/posts"
+          "https://fabinahut-server.onrender.com/posts"
         );
         const postInfo = res.data;
         setFeedPosts(postInfo);

@@ -13,7 +13,7 @@ const Login = () => {
   };
   return (
     <div className=" bg-gray-700 min-h-screen  ">
-      <div className="  text-4xl border-solid border bg-white rounded-b-3xl h-20   w-full justify-center flex items-end pb-2    text-gray-600 border-gray-400 font-serif font-extrabold ">
+      <div className="  text-4xl border-solid border bg-white rounded-b-3xl h-20   w-full justify-center flex items-end pb-2    text-gray-600 border-gray-400 font-serif font-extrabold sm:text-2xl sm:h-14 ">
         FabinaHut
       </div>
       <div>
@@ -49,7 +49,7 @@ const Login = () => {
             /* and other goodies */
           }) => (
             <form onSubmit={handleSubmit}>
-              <div className="  flex flex-col rounded-lg  p-4 sm:p-7 mt-24 mx-4  border-solid border   h-80 sm:h-[400px] bg-white sm:w-[550px] sm:ml-[770px]">
+              <div className="  flex flex-col rounded-lg  p-4 sm:p-7 mt-24 mx-4  border-solid border   h-80 sm:h-[400px] bg-white sm:w-[550px] sm:ml-[400px]">
                 <input
                   placeholder="Enter your Email"
                   type="email"

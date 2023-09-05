@@ -11,7 +11,7 @@ const Register = () => {
 
   return (
     <div className=" bg-gray-700 min-h-screen">
-      <div className="  text-4xl border-solid border bg-white rounded-b-3xl h-20   w-full justify-center flex items-end pb-2    text-gray-600 border-gray-400 font-serif font-extrabold ">
+      <div className="  text-4xl border-solid border bg-white rounded-b-3xl h-20 sm:h-14 sm:text-2xl   w-full justify-center flex items-end pb-2    text-gray-600 border-gray-400 font-serif font-extrabold ">
         FabinaHut
       </div>
       <div>
@@ -69,7 +69,7 @@ const Register = () => {
             /* and other goodies */
           }) => (
             <form onSubmit={handleSubmit}>
-              <div className="  flex flex-col  p-4 mt-24 mx-4  border-solid border pb-16 sm:pb-20  bg-white  sm:w-[550px] sm:ml-[770px] rounded-lg sm:p-7 ">
+              <div className="  flex flex-col  p-4 mt-24 mx-4  border-solid border pb-16 sm:pb-20  bg-white  sm:w-[550px] sm:ml-[400px] rounded-lg sm:p-7 ">
                 <input
                   placeholder="First Name"
                   type="firstName"

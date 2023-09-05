@@ -86,7 +86,7 @@ const Homepage = () => {
               <input
                 ref={inputRef}
                 placeholder="What's on your mind..."
-                className=" capitalize focus:outline-none text-gray-600  border-none pl-5 border focus:shadow-sm rounded-full w-48 bg-gray-200 h-16  sm:h-11 sm:ml-4 flex  sm:mb-1 mt-8 sm:mt-4 mb-4 ml-6 sm:w-3/4 sm:text-md "
+                className=" capitalize focus:outline-none text-gray-600  border-none pl-5 border focus:shadow-sm rounded-full w-48 bg-gray-200 h-16  sm:h-11 sm:ml-4 flex  sm:mb-1 mt-8 sm:mt-4 mb-4 ml-2 sm:w-3/4 sm:text-md "
               ></input>
             </div>
             <p className=" flex-none sm:flex animate-bounce  text-red-900  sm:text-sm p-2 sm:justify-center rounded-lg px-5 font-semibold mt-2">
@@ -102,8 +102,7 @@ const Homepage = () => {
                     <BiImageAlt className=" sm:text-xl text-xl mr-1 " /> Image
                   </button>
                   <button className="flex justify-center  sm:text-md  text-gray-500 items-center p-2 ml-0 sm:ml-2">
-                    <CgAttachment className=" sm:text-xl text-xl mr-1 " />{" "}
-                    Attachment
+                    <CgAttachment className=" sm:text-xl text-xl mr-1 " /> Files
                   </button>
                 </div>
 

@@ -20,7 +20,7 @@ const Navbar = () => {
           FabinaHut
           <select
             onChange={handleChange}
-            className="  rounded  text-sm sm:text-xl font-sans font-medium ml-14 sm:h-10 h-10 p-1 bg-gray-700 text-white"
+            className="  rounded  text-sm sm:text-xl font-sans font-medium ml-24 sm:ml-5 sm:h-10 h-10 p-1 bg-gray-700 text-white"
           >
             <option selected disabled>
               {username}

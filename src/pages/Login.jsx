@@ -7,13 +7,13 @@ import { useDispatch, useSelector } from "react-redux";
 const Login = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  let alert = useSelector((state) => state.user.currentUser.msg);
+  // let alert = useSelector((state) => state.user.currentUser.msg);
 
-  if (alert) {
-    setTimeout(() => {
-      dispatch(logout());
-    }, 3000);
-  }
+  // if (alert) {
+  //   setTimeout(() => {
+  //     dispatch(logout());
+  //   }, 3000);
+  // }
 
   const handleClick = () => {
     navigate("/register");
@@ -81,7 +81,7 @@ const Login = () => {
                 {errors.password && touched.password && (
                   <div className=" text-red-700 ">{errors.password}</div>
                 )}
-                <p className=" text-red-600">{alert}</p>
+                {/* <p className=" text-red-600">{alert}</p> */}
                 <button
                   className="  sm:mt-10  bg-gray-600 mb-2 rounded-md h-16  focus:outline-none  text-white font-semibold text-xl mt-8"
                   type="submit"

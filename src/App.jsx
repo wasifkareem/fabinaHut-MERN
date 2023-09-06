@@ -5,14 +5,14 @@ import Homepage from "./pages/Homepage";
 import { useSelector } from "react-redux";
 
 function App() {
-  const user = Boolean(useSelector((state) => state.user.currentUser));
+  const user = Boolean(useSelector((state) => state.user.currentUser.token));
 
   return (
     <BrowserRouter>
       <Routes>
         <Route
           path="/"
-          element={!user ? <Login /> : <Navigate to="/homepage" />}
+          element={user == false ? <Login /> : <Navigate to="/homepage" />}
         />
         <Route path="/register" element={<Register />} />
         <Route

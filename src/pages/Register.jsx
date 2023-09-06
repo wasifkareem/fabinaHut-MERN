@@ -69,7 +69,7 @@ const Register = () => {
             /* and other goodies */
           }) => (
             <form onSubmit={handleSubmit}>
-              <div className="  flex flex-col  p-4 mt-24 mx-4  border-solid border pb-16 sm:pb-20  bg-white  sm:w-[550px] sm:ml-[400px] rounded-lg sm:p-7 ">
+              <div className="  flex flex-col  p-4 mt-24 mx-4  border-solid border pb-16 sm:pb-20  bg-white  sm:w-[400px] sm:ml-[480px] rounded-lg sm:p-7 ">
                 <input
                   placeholder="First Name"
                   type="firstName"
@@ -77,7 +77,7 @@ const Register = () => {
                   onChange={handleChange}
                   onBlur={handleBlur}
                   value={values.firstName}
-                  className=" w-full  sm:text-2xl focus:outline-none  border-gray-300 border-solid p-4   capitalize  border"
+                  className=" w-full  sm:text-xl focus:outline-none  border-gray-300 border-solid p-4  sm:p-2  capitalize  border"
                 />
                 {errors.firstName && touched.firstName && (
                   <div className=" text-red-700 ">{errors.firstName}</div>
@@ -89,7 +89,7 @@ const Register = () => {
                   onChange={handleChange}
                   onBlur={handleBlur}
                   value={values.lastName}
-                  className=" w-full border-gray-300 border-solid p-4 mt-4  capitalize focus:outline-none  sm:text-2xl  border"
+                  className=" w-full border-gray-300 border-solid p-4 mt-4  capitalize focus:outline-none  sm:text-xl sm:p-2  border"
                 />
                 {errors.lastName && touched.lastName && (
                   <div className=" text-red-700 ">{errors.lastName}</div>
@@ -101,7 +101,7 @@ const Register = () => {
                   onChange={handleChange}
                   onBlur={handleBlur}
                   value={values.location}
-                  className=" w-full sm:text-2xl focus:outline-none  border-gray-300 border-solid p-4  mt-4  border"
+                  className=" w-full sm:text-xl sm:p-2 focus:outline-none  border-gray-300 border-solid p-4  mt-4  border"
                 />
                 {errors.location && touched.location && (
                   <div className=" text-red-700 ">{errors.location}</div>
@@ -113,14 +113,14 @@ const Register = () => {
                   onChange={handleChange}
                   onBlur={handleBlur}
                   value={values.occupation}
-                  className=" w-full sm:text-2xl focus:outline-none  border-gray-300 border-solid p-4 mt-4   border"
+                  className=" w-full sm:text-xl sm:p-2 focus:outline-none  border-gray-300 border-solid p-4 mt-4   border"
                 />
                 {errors.occupation && touched.occupation && (
                   <div className=" text-red-700 ">{errors.occupation}</div>
                 )}
 
                 <div className=" w-full border-gray-200  border p-4 py-8 mt-4  text-gray-400  ">
-                  <div className=" w-full border-gray-600  sm:text-2xl  cursor-pointer focus:outline-none p-4 border border-dashed  ">
+                  <div className=" w-full border-gray-600  sm:text-xl sm:p-2  cursor-pointer focus:outline-none p-4 border border-dashed  ">
                     <UploadComponent
                       values={values}
                       setFieldValue={setFieldValue}
@@ -135,7 +135,7 @@ const Register = () => {
                   onChange={handleChange}
                   onBlur={handleBlur}
                   value={values.email}
-                  className=" w-full sm:text-2xl focus:outline-none   border-gray-300 border-solid p-4  mt-4  border"
+                  className=" w-full sm:text-xl sm:p-2 focus:outline-none   border-gray-300 border-solid p-4  mt-4  border"
                 />
                 {errors.email && touched.email && (
                   <div className=" text-red-700 ">{errors.email}</div>
@@ -147,7 +147,7 @@ const Register = () => {
                   onChange={handleChange}
                   onBlur={handleBlur}
                   value={values.password}
-                  className=" w-full sm:text-2xl focus:outline-none  border-gray-300 border-solid p-4  border  mt-4"
+                  className=" w-full sm:text-xl sm:p-2 focus:outline-none  border-gray-300 border-solid p-4  border  mt-4"
                 />
                 {errors.password && touched.password && (
                   <div className=" text-red-700 ">{errors.password}</div>
@@ -161,7 +161,7 @@ const Register = () => {
                 </button>
                 <span
                   onClick={handleClick}
-                  className=" text-gray-400 underline sm:text-2xl cursor-pointer "
+                  className=" text-gray-500 underline sm:text-base cursor-pointer "
                 >
                   Already have an account&#63; Login here
                 </span>
@@ -191,7 +191,7 @@ const UploadComponent = (props) => {
       <div {...getRootProps({ className: "dropzone" })}>
         <input {...getInputProps()} />
         {!values.picture ? (
-          <p>Add Picture Here</p>
+          <p>Add Profile Image</p>
         ) : (
           <div>{values.picture.name}</div>
         )}

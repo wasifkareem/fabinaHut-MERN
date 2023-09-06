@@ -86,7 +86,7 @@ const Homepage = () => {
               <input
                 ref={inputRef}
                 placeholder="What's on your mind..."
-                className="  first-letter:uppercase focus:outline-none text-gray-600  border-none pl-5 border focus:shadow-sm rounded-full w-48 bg-gray-200 h-16  sm:h-11 sm:ml-4 flex  sm:mb-1 mt-8 sm:mt-4 mb-4 ml-2 sm:w-3/4 sm:text-md "
+                className="  focus:outline-none text-gray-600  border-none pl-5 border focus:shadow-sm rounded-full w-48 bg-gray-200 h-16  sm:h-11 sm:ml-4 flex  sm:mb-1 mt-8 sm:mt-4 mb-4 ml-2 sm:w-3/4 sm:text-md "
               ></input>
             </div>
             <p className=" flex-none sm:flex animate-bounce  text-red-900  sm:text-sm p-2 sm:justify-center rounded-lg px-5 font-semibold mt-2">

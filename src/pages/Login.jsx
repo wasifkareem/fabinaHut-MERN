@@ -1,29 +1,20 @@
 import { Field, Formik } from "formik";
 import * as Yup from "yup";
 import { useNavigate } from "react-router-dom";
-import { loginSuccess } from "../redux/userRedux";
-import { useDispatch } from "react-redux";
-import { useEffect } from "react";
-import axios from "axios";
+import { loginSuccess, logout } from "../redux/userRedux";
+import { useDispatch, useSelector } from "react-redux";
+import { useState } from "react";
 
 const Login = () => {
-  useEffect(() => {
-    const getdata = async () => {
-      try {
-        const res = await axios.get(
-          "https://fabinahut-server.onrender.com/posts"
-        );
-        const postInfo = res.data;
-        setFeedPosts(postInfo);
-      } catch (err) {
-        console.log(err);
-      }
-    };
-    getdata();
-  });
-
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  let alert = useSelector((state) => state.user.currentUser.msg);
+
+  if (alert) {
+    setTimeout(() => {
+      dispatch(logout());
+    }, 3000);
+  }
 
   const handleClick = () => {
     navigate("/register");
@@ -66,7 +57,7 @@ const Login = () => {
             /* and other goodies */
           }) => (
             <form onSubmit={handleSubmit}>
-              <div className="  flex flex-col rounded-lg  p-4 sm:p-7 mt-24 mx-4  border-solid border   h-80 sm:h-[400px] bg-white sm:w-[550px] sm:ml-[400px]">
+              <div className="  flex flex-col rounded-lg  p-4 sm:p-7 mt-24 mx-4  border-solid border   h-80 sm:h-[400px] bg-white sm:w-[400px] sm:ml-[488px]">
                 <input
                   placeholder="Enter your Email"
                   type="email"
@@ -74,7 +65,7 @@ const Login = () => {
                   onChange={handleChange}
                   onBlur={handleBlur}
                   value={values.email}
-                  className=" sm:text-2xl w-full border-gray-300 border-solid p-4 focus:outline-none border"
+                  className=" sm:text-xl w-full border-gray-300 border-solid p-4 sm:p-2 focus:outline-none border"
                 />
                 {errors.email && touched.email && (
                   <div className=" text-red-700 ">{errors.email}</div>
@@ -86,22 +77,23 @@ const Login = () => {
                   onChange={handleChange}
                   onBlur={handleBlur}
                   value={values.password}
-                  className=" w-full border-gray-300 border-solid p-4  border focus:outline-none  mt-4 sm:mb-10 sm:text-2xl"
+                  className=" w-full border-gray-300 border-solid p-4  border focus:outline-none sm:p-2  mt-4 sm:text-xl"
                 />
                 {errors.password && touched.password && (
                   <div className=" text-red-700 ">{errors.password}</div>
                 )}
+                <p className=" text-red-600">{alert}</p>
                 <button
-                  className="   bg-gray-600 mb-2 rounded-md h-16  focus:outline-none  text-white font-semibold text-xl mt-8"
+                  className="  sm:mt-10  bg-gray-600 mb-2 rounded-md h-16  focus:outline-none  text-white font-semibold text-xl mt-8"
                   type="submit"
                   disabled={isSubmitting}
                 >
-                  Submit
+                  Login
                 </button>
 
                 <span
                   onClick={handleClick}
-                  className=" text-gray-400 underline sm:text-xl cursor-pointer"
+                  className=" text-gray-500 underline sm:text-base cursor-pointer"
                 >
                   Don&#39;t have an account&#63; Sign Up here
                 </span>

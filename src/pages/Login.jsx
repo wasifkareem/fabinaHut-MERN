@@ -3,7 +3,6 @@ import * as Yup from "yup";
 import { useNavigate } from "react-router-dom";
 import { loginSuccess, logout } from "../redux/userRedux";
 import { useDispatch, useSelector } from "react-redux";
-import { useState } from "react";
 
 const Login = () => {
   const navigate = useNavigate();

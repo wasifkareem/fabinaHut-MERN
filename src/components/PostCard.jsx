@@ -7,32 +7,6 @@ import axios from "axios";
 const PostCard = ({ item }) => {
   const token = useSelector((state) => state.user.currentUser.token);
 
-  const handleClick = () => {
-    const postData = {
-      userid: item.userId,
-    };
-
-    const headers = {
-      Authorization: `Bearer ${token}`,
-      "Content-Type": "application/json",
-    };
-
-    axios
-      .patch(
-        `https://fabinahut-server.onrender.com/posts/${item._id}/like`,
-        JSON.stringify({ postData }),
-        {
-          headers,
-        }
-      )
-      .then((response) => {
-        console.log("Post created:", response.data);
-      })
-      .catch((error) => {
-        console.error("Error creating post:", error);
-      });
-  };
-
   return (
     <div className="  pb-6 px-5  rounded-md bg-white mt-10 mx-6 border flex flex-col   ">
       <section className="flex items-center pt-7 sm:pt-4 sm:mb-0 mb-3">
@@ -70,10 +44,7 @@ const PostCard = ({ item }) => {
       />
       <section className=" flex  text-gray-600 justify-between text-2xl mx-2 mt-4 ">
         <div className="flex items-center ">
-          <AiFillHeart
-            onClick={handleClick}
-            className="  text-red-600 sm:text-xl"
-          />
+          <AiFillHeart className="  text-red-600 sm:text-xl" />
           <p className=" ml-2  text-sm  mr-6 sm:text-xs">4</p>
           <BiCommentDetail className=" sm:text-xl" />{" "}
           <p className=" ml-2 text-sm sm:text-xs">7</p>

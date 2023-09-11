@@ -45,7 +45,7 @@ const PostCard = ({ item }) => {
             />
           }
         </div>
-        <div className=" flex gap-[60px] sm:gap-[350px] items-center sm:mb-2 ">
+        <div className=" flex gap-[60px] sm:gap-[340px] items-center sm:mb-2 ">
           <div className="  w-[120px]">
             <h1 className=" text-base sm:text-base  text-gray-700  font-semibold  ">
               {item.firstName} {item.lastName}

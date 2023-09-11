@@ -39,14 +39,14 @@ const PostCard = ({ item }) => {
         <div>
           {
             <img
-              className="border rounded-full  h-12 w-12 sm:h-14 sm:w-14 object-cover "
+              className="border rounded-full  h-12 w-12 sm:h-14 mr-14 sm:mr-16 sm:w-14 object-cover "
               src={`https://fabinahut-server.onrender.com/assets/${item.userPicturePath}`}
               alt="dp"
             />
           }
         </div>
-        <div className=" flex gap-[70px] sm:gap-[350px] items-center sm:mb-2 ">
-          <div className=" ml-3 w-[110px]">
+        <div className=" flex gap-[60px] sm:gap-[350px] items-center sm:mb-2 ">
+          <div className="  w-[120px]">
             <h1 className=" text-base sm:text-base  text-gray-700  font-semibold  ">
               {item.firstName} {item.lastName}
             </h1>

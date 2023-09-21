@@ -7,9 +7,7 @@ const Posts = (refresh) => {
   useEffect(() => {
     const getdata = async () => {
       try {
-        const res = await axios.get(
-          "https://fabinahut-server.onrender.com/posts"
-        );
+        const res = await axios.get("https://fabinahut.onrender.com/posts");
         const postInfo = res.data;
         setFeedPosts(postInfo);
       } catch (err) {

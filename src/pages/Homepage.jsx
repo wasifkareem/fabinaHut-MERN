@@ -75,7 +75,7 @@ const Homepage = () => {
           <UserCard />
         </div>
 
-        <div className=" sm:flex sm:flex-col   sm:mt-1 ">
+        <div className=" sm:flex sm:flex-col sm:w-full   sm:mt-1 ">
           <section className="    rounded-md bg-white mt-10 sm:mt-2 mx-6 border flex flex-col  ">
             <div className="flex items-center">
               <img
@@ -93,7 +93,7 @@ const Homepage = () => {
               {error}
             </p>
             {!imageBox ? (
-              <div className="flex justify-between sm:pl-3 pl-2 mt-5 sm:mt-0 items-center py-4 sm:py-2 sm:mb-3">
+              <div className="flex justify-between  sm:pl-3 pl-2 mt-5 sm:mt-0 items-center py-4 sm:py-2 sm:mb-3">
                 <div className="flex ">
                   <button
                     onClick={imgClick}

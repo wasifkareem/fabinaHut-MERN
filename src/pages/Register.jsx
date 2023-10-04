@@ -69,7 +69,7 @@ const Register = () => {
             /* and other goodies */
           }) => (
             <form onSubmit={handleSubmit}>
-              <div className="  flex flex-col  p-4 mt-24 mx-4  border-solid border pb-16 sm:pb-20  bg-white  sm:w-[400px]  rounded-lg sm:p-7 ">
+              <div className="  flex flex-col  p-4 mt-24 mx-4  border-solid border pb-16 sm:pb-20  bg-white  sm:w-[400px] sm:p-7 ">
                 <input
                   placeholder="First Name"
                   type="firstName"

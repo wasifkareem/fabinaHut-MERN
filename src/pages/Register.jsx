@@ -153,7 +153,7 @@ const Register = () => {
                   <div className=" text-red-700 ">{errors.password}</div>
                 )}
                 <button
-                  className="  bg-gray-600 mb-2 rounded-md h-16  focus:outline-none  text-white font-semibold text-xl mt-8"
+                  className=" border-4 border-b-gray-500 border-r-gray-500  bg-white mb-2 h-16  focus:outline-none  text-gray-600 border-gray-600  font-semibold text-xl mt-8"
                   type="submit"
                   disabled={isSubmitting}
                 >

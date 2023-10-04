@@ -70,8 +70,8 @@ const Homepage = () => {
   return (
     <div className="bg-slate-700 min-h-screen pt-20 ">
       <Navbar />
-      <div className=" sm:flex ">
-        <div className=" sm:w-[730px] sm:mt-1  ">
+      <div className=" sm:flex sm:justify-between ">
+        <div className=" sm:w-[730px] sm:max-w-[410px] sm:mt-1  ">
           <UserCard />
         </div>
 
@@ -168,7 +168,7 @@ const Homepage = () => {
 
           <Posts refresh={refresh} />
         </div>
-        <div className=" hidden lg:block right-0 bg-yellow-100 p-3 h-fit w-[390px] mt-[13px] mr-5 rounded-md ">
+        <div className="  hidden lg:block  bg-yellow-100 p-3 h-fit w-[390px] max-w-[240px] mt-[13px] mr-5 rounded-md ">
           <section className="  mb-2 items-center flex justify-between mx-3 ">
             <p className="   font-semibold text-base text-gray-400">
               Sponsored

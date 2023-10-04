@@ -3,6 +3,7 @@ import * as Yup from "yup";
 import { useNavigate } from "react-router-dom";
 import { loginSuccess, logout } from "../redux/userRedux";
 import { useDispatch, useSelector } from "react-redux";
+import icon from "../assets/icon.png";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -15,7 +16,10 @@ const Login = () => {
       <div className="  text-4xl border-solid border bg-white rounded-b-3xl h-20   w-full justify-center flex items-end pb-2    text-gray-600 border-gray-400 font-serif font-extrabold sm:text-2xl sm:h-14 ">
         FabinaHut
       </div>
-      <div>
+      <div className=" sm:flex sm:gap-40 items-center justify-center">
+        <div>
+          <img className=" hidden mt-12 lg:block h-[500px]" src={icon} alt="" />
+        </div>
         <Formik
           initialValues={{ email: "", password: "" }}
           onSubmit={async (values) => {
@@ -48,7 +52,7 @@ const Login = () => {
             /* and other goodies */
           }) => (
             <form onSubmit={handleSubmit}>
-              <div className="  flex flex-col justify-center rounded-lg  p-4 sm:p-7 mt-24 mx-4  border-solid border   h-80  bg-white sm:w-[400px] ">
+              <div className="  flex flex-col justify-center   p-4 sm:p-7 mt-24 mx-4  border-solid border   h-80  bg-white sm:w-[400px] ">
                 <input
                   placeholder="Enter your Email"
                   type="email"
@@ -75,7 +79,7 @@ const Login = () => {
                 )}
                 {/* <p className=" text-red-600">{alert}</p> */}
                 <button
-                  className="  sm:mt-10  bg-gray-600 mb-2 rounded-md h-16  focus:outline-none  text-white font-semibold text-xl mt-8"
+                  className="  sm:mt-10  bg-white mb-2 border-4 border-b-gray-500 border-r-gray-500 h-16  focus:outline-none  text-gray-600  border-gray-600 font-semibold text-xl mt-8"
                   type="submit"
                   disabled={isSubmitting}
                 >

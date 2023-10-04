@@ -22,11 +22,9 @@ const UserCard = () => {
     (state) => state.user.currentUser.user.picturePath
   );
 
-  // const imagePath = `/assets/public/${picturePath}`;
-
   return (
     <div>
-      <div className="  pb-6  sm:text-sm rounded-md bg-white mt-2  ml-6 sm:ml-4 mr-6 border flex flex-col  ">
+      <div className="  pb-6  sm:text-sm rounded-md bg-white mt-2  ml-6 sm:ml-4 sm:mr-0 mr-6 border flex flex-col  ">
         <section className="flex items-center">
           {
             <img

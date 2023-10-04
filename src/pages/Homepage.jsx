@@ -71,11 +71,11 @@ const Homepage = () => {
     <div className="bg-slate-700 min-h-screen pt-20 ">
       <Navbar />
       <div className=" sm:flex ">
-        <div className=" sm:w-1/3 sm:fixed sm:mt-1  ">
+        <div className=" sm:w-[730px] sm:mt-1  ">
           <UserCard />
         </div>
 
-        <div className=" sm:flex sm:flex-col sm:max-w-[650px] sm:ml-[440px] sm:mt-1 ">
+        <div className=" sm:flex sm:flex-col   sm:mt-1 ">
           <section className="    rounded-md bg-white mt-10 sm:mt-2 mx-6 border flex flex-col  ">
             <div className="flex items-center">
               <img
@@ -168,7 +168,7 @@ const Homepage = () => {
 
           <Posts refresh={refresh} />
         </div>
-        <div className=" sm:fixed hidden lg:block right-0 bg-yellow-100 p-3  max-h-[500px] w-[250px] mt-[13px] mr-5 rounded-md ">
+        <div className=" hidden lg:block right-0 bg-yellow-100 p-3 h-fit w-[390px] mt-[13px] mr-5 rounded-md ">
           <section className="  mb-2 items-center flex justify-between mx-3 ">
             <p className="   font-semibold text-base text-gray-400">
               Sponsored

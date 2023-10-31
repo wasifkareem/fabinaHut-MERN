@@ -26,14 +26,16 @@ const Register = () => {
             picture: "",
           }}
           onSubmit={async (values) => {
+            console.log(values);
             const formData = new FormData();
             for (let value in values) {
               formData.append(value, values[value]);
             }
             formData.append("picturePath", values.picture.name);
+            console.log(formData);
 
             const savedUserResponse = await fetch(
-              "https://fabinahut.onrender.com/auth/register",
+              "https://fabinahut-server.onrender.com/auth/register",
               {
                 method: "POST",
                 body: formData,
@@ -187,7 +189,6 @@ const UploadComponent = (props) => {
 
   return (
     <div>
-      {}
       <div {...getRootProps({ className: "dropzone" })}>
         <input {...getInputProps()} />
         {!values.picture ? (

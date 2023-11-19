@@ -9,7 +9,7 @@ const Posts = (refresh) => {
     const getdata = async () => {
       try {
         const res = await axios.get(
-          "https://fabinahut-server.onrender.com/posts"
+          "https://fabinahut.onrender.com/posts"
         );
         const postInfo = res.data;
         setFeedPosts(postInfo);

@@ -30,7 +30,7 @@ const Navbar = () => {
           </select>
           <img
             className=" h-10 w-10 sm:h-10  sm:w-10 sm:ml-[1px] rounded border-4 object-cover sm:border-[3px] border-gray-700"
-            src={`https://fabinahut-server.onrender.com/assets/${pic}`}
+            src={`https://fabinahut.onrender.com/assets/${pic}`}
             alt=""
           />
         </div>

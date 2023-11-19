@@ -42,7 +42,7 @@ const Homepage = () => {
     formData.append("picture", fieldValue);
 
     axios
-      .post("https://fabinahut-server.onrender.com/posts", formData)
+      .post("https://fabinahut.onrender.com/posts", formData)
       .then((response) => {
         setRefresh(response.data);
         setFieldValue(null);
@@ -80,7 +80,7 @@ const Homepage = () => {
             <div className="flex items-center">
               <img
                 className="border object-cover object-center rounded-full w-16 h-16 flex  mt-8 sm:mt-6 sm:mb-1 mb-4 ml-6 sm:w-14 sm:h-14 "
-                src={`https://fabinahut-server.onrender.com/assets/${picturePath}`}
+                src={`https://fabinahut.onrender.com/assets/${picturePath}`}
                 alt=" DP"
               />
               <input

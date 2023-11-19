@@ -35,7 +35,7 @@ const Register = () => {
             console.log(formData);
 
             const savedUserResponse = await fetch(
-              "https://fabinahut-server.onrender.com/auth/register",
+              "https://fabinahut.onrender.com/auth/register",
               {
                 method: "POST",
                 body: formData,
